@@ -10,6 +10,8 @@
 		2C4D01AB2270FB81009E0AB7 /* KiwiCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C4D01A12270FB80009E0AB7 /* KiwiCore.framework */; };
 		2C4D01B02270FB81009E0AB7 /* KiwiCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D01AF2270FB81009E0AB7 /* KiwiCoreTests.swift */; };
 		2C4D01B22270FB81009E0AB7 /* KiwiCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C4D01A42270FB81009E0AB7 /* KiwiCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C4D01BC2270FCF2009E0AB7 /* Variable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D01BB2270FCF2009E0AB7 /* Variable.swift */; };
+		2C4D01BE2270FF53009E0AB7 /* VariableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D01BD2270FF53009E0AB7 /* VariableTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		2C4D01AA2270FB81009E0AB7 /* KiwiCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KiwiCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C4D01AF2270FB81009E0AB7 /* KiwiCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiwiCoreTests.swift; sourceTree = "<group>"; };
 		2C4D01B12270FB81009E0AB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C4D01BB2270FCF2009E0AB7 /* Variable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variable.swift; sourceTree = "<group>"; };
+		2C4D01BD2270FF53009E0AB7 /* VariableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,7 @@
 			children = (
 				2C4D01A42270FB81009E0AB7 /* KiwiCore.h */,
 				2C4D01A52270FB81009E0AB7 /* Info.plist */,
+				2C4D01BB2270FCF2009E0AB7 /* Variable.swift */,
 			);
 			path = KiwiCore;
 			sourceTree = "<group>";
@@ -81,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				2C4D01AF2270FB81009E0AB7 /* KiwiCoreTests.swift */,
+				2C4D01BD2270FF53009E0AB7 /* VariableTests.swift */,
 				2C4D01B12270FB81009E0AB7 /* Info.plist */,
 			);
 			path = KiwiCoreTests;
@@ -194,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C4D01BC2270FCF2009E0AB7 /* Variable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C4D01B02270FB81009E0AB7 /* KiwiCoreTests.swift in Sources */,
+				2C4D01BE2270FF53009E0AB7 /* VariableTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +398,7 @@
 		2C4D01B52270FB81009E0AB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -463,6 +472,7 @@
 		2C4D01B62270FB81009E0AB7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
