@@ -16,3 +16,21 @@ public struct Term: Hashable {
         self.coefficient = coefficient
     }
 }
+
+extension Term {
+    public static func *(term: Term, coefficient: CGFloat) -> Term {
+        return Term(variable: term.variable, coefficient: term.coefficient * coefficient)
+    }
+
+    public static func *(coefficient: CGFloat, term: Term) -> Term {
+        return Term(variable: term.variable, coefficient: term.coefficient * coefficient)
+    }
+
+    public static func /(term: Term, coefficient: CGFloat) -> Term {
+        return Term(variable: term.variable, coefficient: term.coefficient / coefficient)
+    }
+
+    public static prefix func -(term: Term) -> Term {
+        return Term(variable: term.variable, coefficient: -term.coefficient)
+    }
+}

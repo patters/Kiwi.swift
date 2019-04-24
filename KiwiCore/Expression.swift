@@ -26,3 +26,25 @@ public struct Expression {
         self.constant = constant
     }
 }
+
+extension Expression {
+    public static func *(expression: Expression, coefficient: CGFloat) -> Expression {
+        return Expression(terms: expression.terms.map { $0 * coefficient},
+                          constant: expression.constant * coefficient)
+    }
+
+    public static func *(coefficient: CGFloat, expression: Expression) -> Expression {
+        return Expression(terms: expression.terms.map { $0 * coefficient},
+                          constant: expression.constant * coefficient)
+    }
+
+    public static func /(expression: Expression, coefficient: CGFloat) -> Expression {
+        return Expression(terms: expression.terms.map { $0 / coefficient},
+                          constant: expression.constant / coefficient)
+    }
+
+    public static prefix func -(expression: Expression) -> Expression {
+        return Expression(terms: expression.terms.map { -$0},
+                          constant: -expression.constant)
+    }
+}

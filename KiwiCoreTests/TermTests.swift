@@ -27,4 +27,22 @@ class TermTests: XCTestCase {
         XCTAssert(t1.variable == a)
         XCTAssert(t2.variable == a)
     }
+    
+    func testTermOperators() {
+        let a = Variable(name: "a")
+        let t = Term(variable: a, coefficient: 42)
+        
+        let t1 = t * 2.0
+        XCTAssert(t1.variable == a)
+        XCTAssert(t1.coefficient == 84.0)
+        let t2 = 2.0 * t
+        XCTAssert(t2.variable == a)
+        XCTAssert(t2.coefficient == 84.0)
+        let t3 = t / 2
+        XCTAssert(t3.variable == a)
+        XCTAssert(t3.coefficient == 21.0)
+        let t4 = -t
+        XCTAssert(t4.variable == a)
+        XCTAssert(t4.coefficient == -42.0)
+    }
 }

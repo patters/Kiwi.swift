@@ -49,3 +49,21 @@ extension Variable: Hashable {
         ObjectIdentifier(data).hash(into: &hasher)
     }
 }
+
+extension Variable {
+    public static func *(variable: Variable, coefficient: CGFloat) -> Term {
+        return Term(variable: variable, coefficient: coefficient)
+    }
+
+    public static func *(coefficient: CGFloat, variable: Variable) -> Term {
+        return Term(variable: variable, coefficient: coefficient)
+    }
+
+    public static func /(variable: Variable, coefficient: CGFloat) -> Term {
+        return Term(variable: variable, coefficient: CGFloat(1.0) / coefficient)
+    }
+
+    public static prefix func -(variable: Variable) -> Term {
+        return Term(variable: variable, coefficient: -1.0)
+    }
+}

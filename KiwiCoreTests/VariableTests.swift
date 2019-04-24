@@ -45,4 +45,20 @@ class VariableTests: XCTestCase {
         set.insert(d)
         XCTAssert(set.count == 4)
     }
+    
+    func testVariableOperations() {
+        let a = Variable()
+        let t1 = a * 2.0
+        XCTAssert(t1.variable == a)
+        XCTAssert(t1.coefficient == 2)
+        let t2 = 2.0 * a
+        XCTAssert(t2.variable == a)
+        XCTAssert(t2.coefficient == 2)
+        let t3 = a / 2.0
+        XCTAssert(t3.variable == a)
+        XCTAssert(t3.coefficient == 0.5)
+        let t4 = -a
+        XCTAssert(t4.variable == a)
+        XCTAssert(t4.coefficient == -1.0)
+    }
 }
