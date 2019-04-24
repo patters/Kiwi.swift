@@ -25,6 +25,17 @@ public struct Expression {
         self.terms = terms
         self.constant = constant
     }
+    
+    private init(termsToReduce: [[Term]], constant: CGFloat) {
+        var reduced = [Variable: CGFloat]()
+        for terms in termsToReduce {
+            for term in terms {
+                reduced[term.variable, default: 0] += term.coefficient
+            }
+        }
+        terms = reduced.map { Term(variable: $0.key, coefficient: $0.value) }
+        self.constant = constant
+    }
 }
 
 extension Expression {
@@ -46,5 +57,10 @@ extension Expression {
     public static prefix func -(expression: Expression) -> Expression {
         return Expression(terms: expression.terms.map { -$0},
                           constant: -expression.constant)
+    }
+    
+    public static func +(lhs: Expression, rhs: Expression) -> Expression {
+        return Expression(termsToReduce: [lhs.terms, rhs.terms],
+                          constant: lhs.constant + rhs.constant)
     }
 }

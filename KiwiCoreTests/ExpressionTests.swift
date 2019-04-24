@@ -58,4 +58,24 @@ class ExpressionTests: XCTestCase {
         XCTAssertEqual(e4.terms, [Term(variable: a, coefficient: -2)])
         XCTAssertEqual(e4.constant, -42)
     }
+    
+    func testExpressionOperations2() {
+        let a = Variable()
+        let t1 = Term(variable: a, coefficient: 2)
+        let e1 = Expression(term: t1, constant: 42)
+
+        let b = Variable()
+        let t2 = Term(variable: b, coefficient: 2)
+        let e2 = Expression(term: t2, constant: 1)
+
+        let e3 = e1 + e1
+        XCTAssertEqual(e3.terms, [Term(variable: a, coefficient: 4)])
+        XCTAssertEqual(e3.constant, 84)
+        let e4 = e1 + e2
+        XCTAssertEqual(Set(e4.terms), Set([t1, t2]))
+        XCTAssertEqual(e4.constant, 43)
+        let e5 = e2 + e1
+        XCTAssertEqual(Set(e5.terms), Set([t1, t2]))
+        XCTAssertEqual(e5.constant, 43)
+    }
 }
