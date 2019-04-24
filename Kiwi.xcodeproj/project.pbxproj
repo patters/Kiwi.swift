@@ -8,10 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		2C4D01AB2270FB81009E0AB7 /* KiwiCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C4D01A12270FB80009E0AB7 /* KiwiCore.framework */; };
-		2C4D01B02270FB81009E0AB7 /* KiwiCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D01AF2270FB81009E0AB7 /* KiwiCoreTests.swift */; };
 		2C4D01B22270FB81009E0AB7 /* KiwiCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C4D01A42270FB81009E0AB7 /* KiwiCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2C4D01BC2270FCF2009E0AB7 /* Variable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D01BB2270FCF2009E0AB7 /* Variable.swift */; };
 		2C4D01BE2270FF53009E0AB7 /* VariableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D01BD2270FF53009E0AB7 /* VariableTests.swift */; };
+		2C4D01C0227100DE009E0AB7 /* Term.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D01BF227100DE009E0AB7 /* Term.swift */; };
+		2C4D01C22271011D009E0AB7 /* TermTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D01C12271011D009E0AB7 /* TermTests.swift */; };
+		2C4D01C422710173009E0AB7 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D01C322710173009E0AB7 /* Expression.swift */; };
+		2C4D01C62271021C009E0AB7 /* ExpressionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D01C52271021C009E0AB7 /* ExpressionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,10 +32,13 @@
 		2C4D01A42270FB81009E0AB7 /* KiwiCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KiwiCore.h; sourceTree = "<group>"; };
 		2C4D01A52270FB81009E0AB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C4D01AA2270FB81009E0AB7 /* KiwiCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KiwiCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2C4D01AF2270FB81009E0AB7 /* KiwiCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiwiCoreTests.swift; sourceTree = "<group>"; };
 		2C4D01B12270FB81009E0AB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C4D01BB2270FCF2009E0AB7 /* Variable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variable.swift; sourceTree = "<group>"; };
 		2C4D01BD2270FF53009E0AB7 /* VariableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableTests.swift; sourceTree = "<group>"; };
+		2C4D01BF227100DE009E0AB7 /* Term.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Term.swift; sourceTree = "<group>"; };
+		2C4D01C12271011D009E0AB7 /* TermTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermTests.swift; sourceTree = "<group>"; };
+		2C4D01C322710173009E0AB7 /* Expression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expression.swift; sourceTree = "<group>"; };
+		2C4D01C52271021C009E0AB7 /* ExpressionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,8 @@
 			children = (
 				2C4D01A42270FB81009E0AB7 /* KiwiCore.h */,
 				2C4D01A52270FB81009E0AB7 /* Info.plist */,
+				2C4D01C322710173009E0AB7 /* Expression.swift */,
+				2C4D01BF227100DE009E0AB7 /* Term.swift */,
 				2C4D01BB2270FCF2009E0AB7 /* Variable.swift */,
 			);
 			path = KiwiCore;
@@ -85,7 +93,8 @@
 		2C4D01AE2270FB81009E0AB7 /* KiwiCoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				2C4D01AF2270FB81009E0AB7 /* KiwiCoreTests.swift */,
+				2C4D01C12271011D009E0AB7 /* TermTests.swift */,
+				2C4D01C52271021C009E0AB7 /* ExpressionTests.swift */,
 				2C4D01BD2270FF53009E0AB7 /* VariableTests.swift */,
 				2C4D01B12270FB81009E0AB7 /* Info.plist */,
 			);
@@ -201,6 +210,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C4D01BC2270FCF2009E0AB7 /* Variable.swift in Sources */,
+				2C4D01C0227100DE009E0AB7 /* Term.swift in Sources */,
+				2C4D01C422710173009E0AB7 /* Expression.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,8 +219,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C4D01B02270FB81009E0AB7 /* KiwiCoreTests.swift in Sources */,
 				2C4D01BE2270FF53009E0AB7 /* VariableTests.swift in Sources */,
+				2C4D01C22271011D009E0AB7 /* TermTests.swift in Sources */,
+				2C4D01C62271021C009E0AB7 /* ExpressionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
