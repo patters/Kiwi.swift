@@ -11,22 +11,22 @@ public struct Expression {
     let terms: [Term]
     let constant: CGFloat
     
-    init(constant: CGFloat = 0) {
+    public init(constant: CGFloat = 0) {
         terms = []
         self.constant = constant
     }
     
-    init(term: Term, constant: CGFloat = 0) {
+    public init(term: Term, constant: CGFloat = 0) {
         terms = [term]
         self.constant = constant
     }
     
-    init(terms: [Term], constant: CGFloat = 0) {
+    public init(terms: [Term], constant: CGFloat = 0) {
         self.terms = terms
         self.constant = constant
     }
     
-    private init(termsToReduce: [[Term]], constant: CGFloat) {
+    init(termsToReduce: [[Term]], constant: CGFloat) {
         var reduced = [Variable: CGFloat]()
         for terms in termsToReduce {
             for term in terms {
@@ -62,5 +62,61 @@ extension Expression {
     public static func +(lhs: Expression, rhs: Expression) -> Expression {
         return Expression(termsToReduce: [lhs.terms, rhs.terms],
                           constant: lhs.constant + rhs.constant)
+    }
+
+    public static func +(lhs: Expression, rhs: Term) -> Expression {
+        return Expression(termsToReduce: [lhs.terms, [rhs]],
+                          constant: lhs.constant)
+    }
+    
+    public static func +(lhs: Term, rhs: Expression) -> Expression {
+        return Expression(termsToReduce: [[lhs], rhs.terms],
+                          constant: rhs.constant)
+    }
+
+    public static func +(lhs: Expression, rhs: Variable) -> Expression {
+        return Expression(termsToReduce: [lhs.terms, [Term(variable: rhs)]],
+                          constant: lhs.constant)
+    }
+    
+    public static func +(lhs: Variable, rhs: Expression) -> Expression {
+        return Expression(termsToReduce: [[Term(variable: lhs)], rhs.terms],
+                          constant: rhs.constant)
+    }
+    
+    public static func +(lhs: Expression, rhs: CGFloat) -> Expression {
+        return Expression(terms: lhs.terms, constant: lhs.constant + rhs)
+    }
+    
+    public static func +(lhs: CGFloat, rhs: Expression) -> Expression {
+        return Expression(terms: rhs.terms, constant: rhs.constant + lhs)
+    }
+    
+    public static func -(lhs: Expression, rhs: Expression) -> Expression {
+        return lhs + -rhs
+    }
+
+    public static func -(lhs: Expression, rhs: Term) -> Expression {
+        return lhs + -rhs
+    }
+    
+    public static func -(lhs: Term, rhs: Expression) -> Expression {
+        return lhs + -rhs
+    }
+
+    public static func -(lhs: Expression, rhs: Variable) -> Expression {
+        return lhs + -rhs
+    }
+
+    public static func -(lhs: Variable, rhs: Expression) -> Expression {
+        return lhs + -rhs
+    }
+
+    public static func -(lhs: Expression, rhs: CGFloat) -> Expression {
+        return lhs + -rhs
+    }
+
+    public static func -(lhs: CGFloat, rhs: Expression) -> Expression {
+        return lhs + -rhs
     }
 }

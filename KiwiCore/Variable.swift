@@ -66,4 +66,20 @@ extension Variable {
     public static prefix func -(variable: Variable) -> Term {
         return Term(variable: variable, coefficient: -1.0)
     }
+    
+    public static func +(lhs: Variable, rhs: CGFloat) -> Expression {
+        return Expression(terms: [Term(variable: lhs)], constant: rhs)
+    }
+    
+    public static func +(lhs: CGFloat, rhs: Variable) -> Expression {
+        return Expression(terms: [Term(variable: rhs)], constant: lhs)
+    }
+    
+    public static func -(lhs: Variable, rhs: CGFloat) -> Expression {
+        return lhs + -rhs
+    }
+    
+    public static func -(lhs: CGFloat, rhs: Variable) -> Expression {
+        return lhs + -rhs
+    }
 }
